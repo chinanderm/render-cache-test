@@ -1,5 +1,7 @@
 import {
+  href,
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
@@ -33,6 +35,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <nav>
+          <Link to={href("/")}>Home</Link> |{" "}
+          <Link to={href("/no-cache")}>No Cache</Link> |{" "}
+          <Link to={href("/max-age")}>Max Age</Link> |{" "}
+          <Link to={href("/s-max-age")}>Server Max Age</Link> |{" "}
+          <Link to={href("/swr")}>Stale-While-Revalidate</Link>
+        </nav>
         {children}
         <ScrollRestoration />
         <Scripts />
