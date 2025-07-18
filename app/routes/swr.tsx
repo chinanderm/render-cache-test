@@ -2,7 +2,7 @@ import type { Route } from "./+types/s-max-age";
 
 export function headers() {
   return {
-    "Cache-Control": "stale-while-revalidate=15, stale-if-error=3600, public, max-age=60",
+    "Cache-Control": "stale-while-revalidate=60, stale-if-error=3600, public, max-age=15",
   }
 }
 
