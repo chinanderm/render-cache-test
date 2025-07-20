@@ -1,12 +1,11 @@
 import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+export function loader() {
+  return {
+    date: new Date().toISOString(),
+  }
 }
 
-export default function Home() {
-  return <div>Home</div>
+export default function Home({ loaderData }: Route.ComponentProps) {
+  return <div>No Cache-Control Header - {loaderData.date}</div>;
 }
